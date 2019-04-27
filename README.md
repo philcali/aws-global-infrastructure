@@ -1,21 +1,24 @@
 # AWS Global Infrastructure Library
 
 Now that [AWS Regions and Service Endpoints][1] are available via Parameter Store,
-You can do some pretty cool things!
+you can do some pretty cool things! This library demonstrates how to access the
+datastore in a modeled manner, despite being repsented as flat key hierarchy in SSM.
 
 ## The Primitives
 
 There are three basic primitives:
 
-1. Region
-1. Service
-1. RegionalAvailability
+1. `Region`
+1. `Service`
+1. `RegionalAvailability`
 
 From a `Region` you can list all services, and from a `Service`,
 you can list all regions. In either case, you can find the
 regional endpoint.
 
 ## Using the Global Infrastructure
+
+First start with a `GlobalInfrastructure` object.
 
 ``` java
 final GlobalInfrastructure infra = GlobalInfrastructure.defaultInfrastructure();
@@ -25,6 +28,8 @@ final GlobalInfrastructure infra = GlobalInfrastructure.defaultInfrastructure();
 
 ``` java
 final Stream<Region> regions = infra.regions();
+infra.regions().filter(Partition.AWS_CN); // Only China regions
+infra.regionsByCountry("us"); // Only US regions;
 ```
 
 ## Listing all Services
