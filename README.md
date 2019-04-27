@@ -2,7 +2,7 @@
 
 Now that [AWS Regions and Service Endpoints][1] are available via Parameter Store,
 you can do some pretty cool things! This library demonstrates how to access the
-datastore in a modeled manner, despite being repsented as flat key hierarchy in SSM.
+datastore in a modeled manner, despite being repsented as a flat key hierarchy in SSM.
 
 ## The Primitives
 
@@ -43,7 +43,7 @@ final Stream<Service> services = infra.services();
 ``` java
 final Service s3 = infra.service("s3");
 s3.regions()
-    .map(RegionAvailability::reachability)
+    .map(RegionalAvailability::reachability)
     .map(Reachability::endpoint)
     .forEach(System.out::println);
 ```
@@ -53,7 +53,7 @@ s3.regions()
 ``` java
 final Region useast1 = infra.region("us-east-1");
 useast1.services()
-    .map(RegionAvailability::service)
+    .map(RegionalAvailability::service)
     .map(Service::longName)
     .forEach(System.out::println);
 ```
