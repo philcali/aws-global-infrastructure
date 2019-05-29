@@ -1,9 +1,5 @@
 package me.philcali.aws.global.infrastructure.ssm;
 
-import static me.philcali.aws.global.infrastructure.ssm.Constants.REGIONS;
-import static me.philcali.aws.global.infrastructure.ssm.Constants.SERVICES;
-import static me.philcali.aws.global.infrastructure.ssm.Constants.VENDOR_NAMESPACE;
-
 import com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement;
 
 import me.philcali.aws.global.infrastructure.api.Reachability;

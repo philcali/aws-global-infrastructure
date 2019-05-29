@@ -4,7 +4,6 @@ import static me.philcali.aws.global.infrastructure.ssm.Constants.REGIONS;
 import static me.philcali.aws.global.infrastructure.ssm.Constants.SERVICES;
 import static me.philcali.aws.global.infrastructure.ssm.Constants.VERSION;
 
-import java.util.Optional;
 import java.util.stream.Stream;
 
 import com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement;

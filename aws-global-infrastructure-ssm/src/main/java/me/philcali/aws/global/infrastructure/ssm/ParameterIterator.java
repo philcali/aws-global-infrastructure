@@ -2,10 +2,6 @@ package me.philcali.aws.global.infrastructure.ssm;
 
 import java.util.Iterator;
 import java.util.Objects;
-import java.util.Spliterator;
-import java.util.Spliterators;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 import com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement;
 import com.amazonaws.services.simplesystemsmanagement.model.GetParametersByPathRequest;
